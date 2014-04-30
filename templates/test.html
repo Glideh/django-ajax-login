@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Ajax login/registration test</title>
+<!-- Bootstrap required here -->
+    <script>
+$(function () {
+    $('.requires_authentication').click(function (e) {
+        e.preventDefault();
+        the_form = $('#the_form');
+        the_form.post(the_form.attr('action'), the_form.serialize())
+        .done(function () {
+            $('#the_form').submit();
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status == 401) {
+                open_registration();
+                // ^- Implemented in ajax_registration_modal.js included in
+                // ajax_registration_modal.html
+            }
+        });
+    });
+})
+    </script>
+</head>
+<body>
+    <form id="the_form" action="view_returning_401_if_non_authenticated" method="POST">
+        <button class="btn btn-primary">Action 1</button>
+        <button class="btn btn-primary" class="requires_authentication">This action requires authentication</a>
+        <button class="btn btn-primary">Action 3</button>
+    </form>
+{% include 'template/ajax_registration_modal.html' %}
+</body>
+</html>

@@ -1,6 +1,6 @@
 function open_registration() {
-  $('#register_modal .modal-body').load($('#sbookLogin').attr('action'));
-  $('#register_modal').modal('show');
+    $('#register_modal .modal-body').load($('#sbookLogin').attr('action'));
+    $('#register_modal').modal('show');
 }
 
 function show_tab(tab) {
