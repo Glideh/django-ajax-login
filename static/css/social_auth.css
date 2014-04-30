@@ -1,0 +1,11 @@
+.social_auth {
+    text-align: center;
+}
+.social_auth li {
+    border-radius: 5px;
+    padding: 0;
+}
+.social_auth li.associated {
+    box-shadow: 0 0 10px #F54600;
+}
+
