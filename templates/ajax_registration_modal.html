@@ -1,0 +1,35 @@
+{% load i18n static %}
+<div id="register_modal" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">{% trans 'Access' %}</h3>
+    </div>
+    <div class="modal-body">
+        <ul class="nav nav-tabs" id="ajax_tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#ajax_login">{% trans 'Login' %}</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#ajax_registration">{% trans 'Registration' %}</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="ajax_login"
+                data-target="{% url 'common.views.ajax_login' %}"></div>
+            <div class="tab-pane" id="ajax_registration"
+                data-target="{% url 'common.views.ajax_registration' %}"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" id="modal_submit">{% trans 'Submit' %}</button>
+        <button class="btn btn-default" data-dismiss="modal">{% trans 'Close' %}</button>
+    </div>
+</div>
+</div>
+</div>
+<link rel="stylesheet" href="{% static 'css/ajax_registration_modal.css' %}" />
+<link rel="stylesheet" href="{% static 'css/social_auth.css' %}" />
+<script src="{% static 'js/ajax_registration_modal.js' %}"></script>
+

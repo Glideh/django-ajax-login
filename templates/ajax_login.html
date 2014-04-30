@@ -1,0 +1,18 @@
+{% load crispy_forms_tags i18n %}
+    <form method="post" action="{% url 'views.ajax_login' %}" class="form-horizontal">{% csrf_token %}
+{{ crispy form }}
+    </form>
+<hr />
+    <div class="social_auth">
+        <h4 class="text-center">{% trans 'Login using' %}</h4>
+{% include 'templates/social_backends.html' with ajax=True %}
+    </div>
+<script>
+    /* Auth Providers */
+    $('.social_auth a').click(function () {
+        if (typeof(on_awaiting_authentication) != 'undefined') {
+            on_awaiting_authentication();
+        }
+    });
+</script>
+

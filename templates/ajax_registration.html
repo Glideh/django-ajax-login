@@ -1,0 +1,5 @@
+{% load bootstrap i18n %}
+    <form method="post" action="{% url 'common.views.ajax_registration' %}" class="form-horizontal">{% csrf_token %}
+{{ form|bootstrap_horizontal:'col-sm-5' }}
+    </form>
+

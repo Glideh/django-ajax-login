@@ -1,0 +1,15 @@
+{% load static %}
+<ul class="list-inline">
+{% for service in backends.backends %}
+    <li{% if service not in backends.not_associated %} class="associated"{% endif %}>
+    {% if service not in backends.not_associated %}
+        <img src="{% static 'img/social_icons/48x48/'|add:service|add:'.png' %}" />
+    {% else %}
+        <a rel="nofollow" href="{% url 'social:begin' service %}{% if ajax %}?next={% url 'views.socialauth_success' %}{% endif %}"{% if ajax %} target="_blank"{% endif %} title="{{ service|title }}">
+            <img src="{% static 'img/social_icons/48x48/'|add:service|add:'.png' %}" />
+        </a>
+    {% endif %}
+    </li>
+{% endfor %}
+</ul>
+
