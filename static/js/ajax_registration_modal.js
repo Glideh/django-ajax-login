@@ -1,5 +1,5 @@
 function open_registration() {
-    $('#register_modal .modal-body').load($('#sbookLogin').attr('action'));
+    $('#register_modal .modal-body').load('register_login_view');
     $('#register_modal').modal('show');
 }
 
