@@ -11,7 +11,7 @@ Any help to improve & package the code is much appreciated.
 Installation &amp; Requirements
 ===============================
 
-Copy the files in the good locations & DR/IY.
+Copy the files in the good locations & D(R/I)Y.
 This is designed to work with `Django 1.6`, `python-social-auth`, `django-registration`, `Bootstrap` &amp; `django-crispy-forms`
 But it is more here to give an idea on how we could achieve an ajax login/registration.
 
